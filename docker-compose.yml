@@ -13,3 +13,8 @@ services:
       - "5432:5432"
 
     network_mode: "host"
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
