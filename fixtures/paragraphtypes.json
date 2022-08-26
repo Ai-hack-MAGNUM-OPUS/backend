@@ -1,0 +1,275 @@
+[
+  {
+    "model": "checker.paragraphtype",
+    "pk": 1,
+    "fields": {
+      "name": "Понятия, используемые для целей правового акта (при необходимости)"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 2,
+    "fields": {
+      "name": "Цель предоставления субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 3,
+    "fields": {
+      "name": "Наименование органа государственной власти (государственного органа)"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 4,
+    "fields": {
+      "name": "Порядок предоставления средств из бюджета"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 5,
+    "fields": {
+      "name": "Получатель субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 6,
+    "fields": {
+      "name": "Категории отбора получателей субсидий"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 7,
+    "fields": {
+      "name": "Размещение информации на едином портале бюджетной системы Российской Федерации"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 8,
+    "fields": {
+      "name": "Наличие способа проведения отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 9,
+    "fields": {
+      "name": "Дата размещения объявления о проведении отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 10,
+    "fields": {
+      "name": "Содержание объявления о проведении отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 11,
+    "fields": {
+      "name": "Требования к участникам отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 12,
+    "fields": {
+      "name": "Иные требования к участникам отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 13,
+    "fields": {
+      "name": "Требования, предъявляемыек форме и содержанию предложений (заявок), подаваемых участниками отбора"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 14,
+    "fields": {
+      "name": "Информация о количестве предложений (заявок), которое может подать участник"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 15,
+    "fields": {
+      "name": "Правила рассмотрения и оценки предложений (заявок) участников"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 16,
+    "fields": {
+      "name": "Порядок формирования комиссии для рассмотрения и оценки предложений (заявок) участников"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 17,
+    "fields": {
+      "name": "Основание для отклонения предложения (заявки) участника"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 18,
+    "fields": {
+      "name": "Дата, на которую получатель субсидии должен соответствовать требованиям"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 19,
+    "fields": {
+      "name": "Перечень документов, представляемых получателем субсидии для подтверждения соответствия требованиям"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 20,
+    "fields": {
+      "name": "Порядок и сроки рассмотрения документов"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 21,
+    "fields": {
+      "name": "Основания для отказа получателю субсидии в предоставлении субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 22,
+    "fields": {
+      "name": "Размер субсидии и (или) порядок расчета размера субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 23,
+    "fields": {
+      "name": "Предоставление субсидии в очередном финансовом году получателю субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 24,
+    "fields": {
+      "name": "Условия и порядок заключения соглашения"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 25,
+    "fields": {
+      "name": "Требования об условиях согласования новых условий"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 26,
+    "fields": {
+      "name": "Дополнительные условия к порядку заключения соглашения"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 27,
+    "fields": {
+      "name": "Результаты предоставления субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 28,
+    "fields": {
+      "name": "Сроки (периодичность) перечисления субсидии"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 29,
+    "fields": {
+      "name": "Счета, на которые перечисляется субсидия"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 30,
+    "fields": {
+      "name": "Направление расходов"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 31,
+    "fields": {
+      "name": "Запрет на приобретение иностранной валюты"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 32,
+    "fields": {
+      "name": "Согласие на проведение проверки"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 33,
+    "fields": {
+      "name": "Направление затрат (недополученных доходов)"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 34,
+    "fields": {
+      "name": "Перечень документов, подтверждающих фактически произведенные затраты (недополученные доходы)"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 35,
+    "fields": {
+      "name": "Иная информация"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 36,
+    "fields": {
+      "name": "Порядок и сроки представления получателем субсидии отчетности"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 37,
+    "fields": {
+      "name": "Требования об осуществлении контроля (мониторинга) за соблюдением условий, целей и порядка предоставления субсидий и ответственности за их нарушение"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 38,
+    "fields": {
+      "name": "Меры ответственности за нарушение условий, целей и порядка предоставления субсидий"
+    }
+  },
+  {
+    "model": "checker.paragraphtype",
+    "pk": 39,
+    "fields": {
+      "name": "Предоставление средств субсидии третьим лицам"
+    }
+  }
+]

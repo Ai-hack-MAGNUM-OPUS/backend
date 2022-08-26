@@ -14,4 +14,4 @@ django_celery_results==2.4.0
 psutil
 dj-database-url
 uuid
-python-docx
+docx2txt

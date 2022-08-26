@@ -4,6 +4,9 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
+AI_URL = "http://185.244.175.164:5000/api"
+# AI_URL = "http://127.0.0.1:5000"
+
 APPS_DIR = ROOT_DIR
 env = environ.Env()
 
