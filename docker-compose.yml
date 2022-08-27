@@ -1,20 +1,42 @@
-version: "3"
+version: "3.9"
+
 services:
-  postgres:
-    image: "postgres"
-    container_name: "postgres"
-    environment:
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_DB=db
-      - POSTGRES_USER=debug
-      - POSTGRES_PASSWORD=debug
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    command: >
+      sh -c "python3 manage.py makemigrations &&
+             python3 manage.py migrate --noinput &&
+             python3 manage.py loaddata paragraphtypes.json &&
+             python3 manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
-
-    network_mode: "host"
-
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - "POSTGRES_DB=db"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
   redis:
-    image: "redis:alpine"
-    ports:
-      - "6379:6379"
+    image: redis:alpine
+  celery:
+    restart: always
+    build:
+      context: .
+    command: celery -A conf worker --loglevel=INFO
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+      - redis
+      - web
+volumes:
+  postgres_data:
