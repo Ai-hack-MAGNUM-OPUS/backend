@@ -25,12 +25,18 @@ def process_file(pk: int):
         dct = {x: vals[x] for x in range(len(vals))}
 
         x = requests.post("http://109.248.175.223:5000/api", json=dct)
-        for el_id, type_id in x.json().items():
-            Paragraph.objects.create(type_id=type_id, docx=file, text=dct[int(el_id)])
+        if x.status_code == 200:
+            for el_id, dat in x.json().items():
+                type_id, score = dat
+                Paragraph.objects.create(
+                    type_id=type_id, docx=file, text=dct[int(el_id)], score=score
+                )
 
-        counter += len(vals)
-        print(f"processing {uuid}, {counter}/{len_c}")
-        file.paragraphs_processed = counter
-        file.save(update_fields=["paragraphs_processed"])
+            counter += len(vals)
+            print(f"processing {uuid}, {counter}/{len_c}")
+            file.paragraphs_processed = counter
+            file.save(update_fields=["paragraphs_processed"])
+        else:
+            print(f"AI server error, {x.status_code}")
 
     return f"ok, {pk}"

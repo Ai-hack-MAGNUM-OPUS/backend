@@ -1,4 +1,6 @@
 import uuid as uuid
+
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 # Create your models here.
@@ -30,6 +32,7 @@ class ParagraphType(models.Model):
 
 
 class Paragraph(models.Model):
+    score = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     text = models.TextField()
     type = models.ForeignKey(
         ParagraphType, related_name="paragraphs", on_delete=models.CASCADE

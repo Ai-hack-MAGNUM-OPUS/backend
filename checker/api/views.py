@@ -24,8 +24,8 @@ class RetireDocxSerializer(APIView):
     def get(self, request, uuid):
         doc = get_object_or_404(Docx, uuid=uuid)
         res = {}
-        paragraphs = ParagraphType.objects.filter(paragraphs__docx=doc)
+        paragraphs = ParagraphType.objects.all()
         for p in paragraphs:
-            res[p.name] = [x.text for x in p.paragraphs.filter(docx=doc)]
+            res[p.name] = [(x.text, x.score) for x in p.paragraphs.filter(docx=doc)]
         return Response(res)
 
