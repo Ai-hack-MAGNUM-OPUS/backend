@@ -25,7 +25,6 @@ def process_paragraphs(text):
 
 def process_word_paragraphs(text):
     text = text.split("\\r")
-    print(text)
     return _base_process(text)
 
 
