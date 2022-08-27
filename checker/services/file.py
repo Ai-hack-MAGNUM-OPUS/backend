@@ -1,3 +1,8 @@
+import os
+
+from checker.services.generators import generate_charset
+
+
 def process_paragraphs(text):
     paragraphs = {}
     c = 0
@@ -13,3 +18,7 @@ def process_paragraphs(text):
             if c:
                 paragraphs[c] += line
     return paragraphs
+
+
+def media_upload_path(instance, filename):
+    return os.path.join(f"uploads/{generate_charset(7)}/", filename)

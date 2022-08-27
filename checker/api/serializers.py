@@ -8,3 +8,9 @@ class DocxSerializer(serializers.ModelSerializer):
         model = Docx
         fields = ["uuid", "file"]
         extra_kwargs = {"uuid": {"read_only": True}}
+
+
+class DocxStateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Docx
+        fields = ["paragraphs_loaded", "paragraphs_processed"]
