@@ -15,4 +15,5 @@ psutil
 dj-database-url
 uuid
 docx2txt
+python-docx
 requests-async

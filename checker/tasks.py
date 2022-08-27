@@ -1,6 +1,8 @@
 import docx2txt
 import requests
 from celery import shared_task
+from docx import Document
+from docx.enum.text import WD_COLOR_INDEX
 
 from checker.models import Paragraph, Docx, WordDocx, WordParagraph
 from checker.services.file import process_paragraphs, process_word_paragraphs
@@ -77,3 +79,37 @@ def process_word(pk: int):
 
     return f"ok, {pk}"
 
+
+@shared_task
+def highlight_file(pk: int):
+    c = 0
+    title = True
+    file = Docx.objects.get(pk=pk)
+    document = Document(file.file.path)
+
+    for paragraph in document.paragraphs:
+        if title:
+            if (
+                paragraph.text
+                and len(paragraph.text) > 2
+                and paragraph.text[:2] == "1."
+            ):
+                title = False
+        else:
+            if paragraph.text:
+                x = requests.post(
+                    "http://109.248.175.223:5000/api", json={1: paragraph.text}
+                )
+                if x.status_code == 200:
+                    el_id, dat = x.json()["1"]
+                    if dat < 50:
+                        text = paragraph.text
+                        paragraph.clear()
+                        run = paragraph.add_run()
+                        run.font.highlight_color = WD_COLOR_INDEX.RED
+                        run.add_text(text)
+                        c += 1
+                else:
+                    print("AI ERROR")
+    document.save(file.file.path)
+    return f"highlighted {c}, {pk}"

@@ -36,7 +36,6 @@ class RetireDocxSerializer(APIView):
 
 
 class ListCreateWordDocxApiView(generics.ListCreateAPIView):
-    parser_classes = [FormParser, MultiPartParser]
     serializer_class = WordDocxSerializer
     queryset = WordDocx.objects.all()
 
