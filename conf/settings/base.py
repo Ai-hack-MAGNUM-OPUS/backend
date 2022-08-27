@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
-AI_URL = "http://185.244.175.164:5000/api"
+AI_URL = "http://109.248.175.223:5000/api"
 # AI_URL = "http://127.0.0.1:5000"
 
 APPS_DIR = ROOT_DIR
@@ -64,7 +64,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
     "corsheaders",
-    "django_celery_results"
+    "django_celery_results",
 ]
 
 HEALTH_CHECKS = [
@@ -199,10 +199,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Celery
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_TIMEZONE = "Europe/Moscow"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_RESULT_BACKEND = "django-db"

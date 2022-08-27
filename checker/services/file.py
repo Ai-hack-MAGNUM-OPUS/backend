@@ -4,19 +4,18 @@ from checker.services.generators import generate_charset
 
 
 def process_paragraphs(text):
+    text = text.split("\n")
     paragraphs = {}
-    c = 0
+    c = 1
+    title = True
     for line in text:
-        ind = line[:2]
-        if len(ind) == 2 and ind[1] == ".":
-            try:
-                ind = int(ind[0])
-                c = ind
-                paragraphs[c] = ""
-            except ValueError:
-                print()
-            if c:
-                paragraphs[c] += line
+        if title:
+            if line and len(line) > 2 and line[:2] == "1.":
+                title = False
+        else:
+            if line:
+                paragraphs[c] = line
+                c += 1
     return paragraphs
 
 
