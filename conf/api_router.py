@@ -1,6 +1,7 @@
 from django.urls import path, include
 
-from checker.api.views import ListCreateDocxApiView, RetireDocxSerializer, GetDocxState
+from checker.api.views import ListCreateDocxApiView, RetireDocxSerializer, GetDocxState, ListCreateWordDocxApiView, \
+    GetWordDocxState, RetireWordDocxSerializer
 
 urlpatterns = [
     path("health/", include("health_check.urls")),
@@ -22,12 +23,12 @@ urlpatterns = [
         "word/",
         include(
             [
-                path("docx/", ListCreateDocxApiView.as_view(), name="list_create_word"),
+                path("docx/", ListCreateWordDocxApiView.as_view(), name="list_create_word"),
                 path(
-                    "docx/<uuid:uuid>", RetireDocxSerializer.as_view(), name="get_word"
+                    "docx/<uuid:uuid>", GetWordDocxState.as_view(), name="get_word"
                 ),
                 path(
-                    "state/<uuid:uuid>", GetDocxState.as_view(), name="get_state_word"
+                    "state/<uuid:uuid>", RetireWordDocxSerializer.as_view(), name="get_state_word"
                 ),
             ]
         ),

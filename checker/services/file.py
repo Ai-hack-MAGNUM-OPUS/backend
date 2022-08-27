@@ -3,8 +3,7 @@ import os
 from checker.services.generators import generate_charset
 
 
-def process_paragraphs(text):
-    text = text.split("\n")
+def _base_process(text):
     paragraphs = {}
     c = 1
     title = True
@@ -17,6 +16,17 @@ def process_paragraphs(text):
                 paragraphs[c] = line
                 c += 1
     return paragraphs
+
+
+def process_paragraphs(text):
+    text = text.split("\n")
+    return _base_process(text)
+
+
+def process_word_paragraphs(text):
+    text = text.split("\\r")
+    print(text)
+    return _base_process(text)
 
 
 def media_upload_path(instance, filename):
